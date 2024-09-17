@@ -2,12 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from '../services/user.service';
 import { RouterModule } from '@angular/router';
 import { LoaderComponent } from '../loader/loader.component';
+import { NavbarComponent } from "../components/navbar/navbar.component";
 
 
 @Component({
   selector: 'app-user-list',
   standalone: true,
-  imports: [RouterModule,LoaderComponent],
+  imports: [RouterModule, LoaderComponent, NavbarComponent],
   templateUrl: './user-list.component.html',
   styleUrl: './user-list.component.css'
 })

@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { UserService } from '../services/user.service';
+import { NavbarComponent } from "../components/navbar/navbar.component";
 
 @Component({
   selector: 'app-user-detail',
   standalone: true,
-  imports: [],
+  imports: [NavbarComponent],
   templateUrl: './user-detail.component.html',
   styleUrl: './user-detail.component.css'
 })
