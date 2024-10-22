@@ -31,6 +31,7 @@ export class PolyAlphabeticCipherComponent {
       this.savedInput+=this.Cipher_key[c][d]
       
     }
+    console.log(this.savedInput);
     }     
   decode(value:string):void{
     this.type="decoded";
@@ -47,6 +48,7 @@ export class PolyAlphabeticCipherComponent {
       }
       this.savedInput += String.fromCharCode(temp+65)
     }
+    console.log(this.savedInput)
       }
 
 

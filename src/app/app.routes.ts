@@ -7,6 +7,7 @@ import { CaesarCipherComponent } from './Cryptography/caesar-cipher/caesar-ciphe
 import { PolyAlphabeticCipherComponent } from './Cryptography/poly-alphabetic-cipher/poly-alphabetic-cipher.component';
 import { VigenereCipherComponent } from './Cryptography/vigenere-cipher/vigenere-cipher.component';
 import { AdvanceVigenereCipherComponent } from './Cryptography/advance-vigenere-cipher/advance-vigenere-cipher.component';
+import { OneTimePadCipherComponent } from './Cryptography/one-time-pad-cipher/one-time-pad-cipher.component';
 
 
 export const routes: Routes = [
@@ -19,4 +20,6 @@ export const routes: Routes = [
     {path:"poly-alphabetic-cipher",component:PolyAlphabeticCipherComponent},
     {path:"vigenere_cipher",component:VigenereCipherComponent},
     {path:"Advance_vigenere_cipher",component:AdvanceVigenereCipherComponent},
+    {path:"one_time_pad_cipher",component:OneTimePadCipherComponent},
+    
 ];

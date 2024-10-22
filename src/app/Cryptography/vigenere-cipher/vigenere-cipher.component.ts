@@ -50,6 +50,7 @@ export class VigenereCipherComponent {
       
       this.savedInput+=this.nestedArray[c][d]
     }
+    console.log(this.savedInput);
     }     
   decode(value:string):void{
     this.type="decoded";
@@ -59,8 +60,6 @@ export class VigenereCipherComponent {
       temp=0
       let d=this.KeyValue.charCodeAt(i)-65
       for (let j = 0; j < this.nestedArray[d].length; j++){
-        console.log(i,d,j)
-        console.log(this.nestedArray[d][j],value[i])
         if(this.nestedArray[d][j]==value[i]){
           temp=j
           this.savedInput += String.fromCharCode(temp+65)
@@ -69,6 +68,7 @@ export class VigenereCipherComponent {
       }
       
     }
+    console.log(this.savedInput);
       }
 
 
