@@ -9,10 +9,14 @@ import { VigenereCipherComponent } from './Cryptography/vigenere-cipher/vigenere
 import { AdvanceVigenereCipherComponent } from './Cryptography/advance-vigenere-cipher/advance-vigenere-cipher.component';
 import { OneTimePadCipherComponent } from './Cryptography/one-time-pad-cipher/one-time-pad-cipher.component';
 import { PlayFairSquareCipherComponent } from './Cryptography/play-fair-square-cipher/play-fair-square-cipher.component';
+import { RailFenceCipherComponent } from './Cryptography/rail-fence-cipher/rail-fence-cipher.component';
+import { HillCipherComponent } from './Cryptography/hill-cipher/hill-cipher.component';
+import { RowColumnCipherComponent } from './Cryptography/row-column-cipher/row-column-cipher.component';
+import { HillciphertestComponent } from './Cryptography/hillciphertest/hillciphertest.component';
 
 
 export const routes: Routes = [
-    {path:"",redirectTo:"play_fair_square_cipher",pathMatch:"full"},
+    {path:"",redirectTo:"login",pathMatch:"full"},
     {path:"login1",component:Login1Component},
     {path:"login",component:LoginComponent},
     {path:"userlist",component:UserListComponent},
@@ -23,5 +27,9 @@ export const routes: Routes = [
     {path:"Advance_vigenere_cipher",component:AdvanceVigenereCipherComponent},
     {path:"one_time_pad_cipher",component:OneTimePadCipherComponent},
     {path:"play_fair_square_cipher",component:PlayFairSquareCipherComponent},
+    {path:"rail_fence_cipher",component:RailFenceCipherComponent},
+    {path:"hill_cipher",component:HillCipherComponent},
+    //{path:"hill_cipher",component:HillciphertestComponent},
+    {path:"row_column_cipher",component:RowColumnCipherComponent},
     
 ];
