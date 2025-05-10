@@ -1,0 +1,39 @@
+<app-navbar></app-navbar>
+<div class="form-container">
+  <h2>Create/Update Profile</h2>
+  <form (ngSubmit)="createProfile()" class="profile-form">
+  <input type="number" [(ngModel)]="userProfile.age" name="age" placeholder="Age" required />
+  
+  <select [(ngModel)]="userProfile.gender" name="gender" required>
+    <option value="Male">Male</option>
+    <option value="Female">Female</option>
+  </select>
+  
+  <input type="text" [(ngModel)]="userProfile.phone" name="phone" placeholder="Phone" required />
+  <input type="text" [(ngModel)]="userProfile.cnic" name="cnic" placeholder="CNIC" required />
+  <input type="date" [(ngModel)]="userProfile.birthdate" name="birthdate" />
+  <input type="text" [(ngModel)]="userProfile.image" name="image" placeholder="Image URL" />
+
+  <!-- Address Fields -->
+  <h4>Address</h4>
+  <input type="text" [(ngModel)]="userProfile.address.address" name="address" placeholder="Street Address" />
+  <input type="text" [(ngModel)]="userProfile.address.city" name="city" placeholder="City" />
+  <input type="text" [(ngModel)]="userProfile.address.state" name="state" placeholder="State" />
+  <input type="text" [(ngModel)]="userProfile.address.country" name="country" placeholder="Country" />
+
+  <!-- Company Fields -->
+  <h4>Company</h4>
+  <input type="text" [(ngModel)]="userProfile.company.department" name="department" placeholder="Department" />
+  <input type="text" [(ngModel)]="userProfile.company.name" name="companyName" placeholder="Company Name" />
+  <input type="text" [(ngModel)]="userProfile.company.title" name="title" placeholder="Job Title" />
+  <input type="text" [(ngModel)]="userProfile.company.address.address" name="companyAddress" placeholder="Company Address" />
+  <input type="text" [(ngModel)]="userProfile.company.address.city" name="companyCity" placeholder="Company City" />
+  <input type="text" [(ngModel)]="userProfile.company.address.state" name="companyState" placeholder="Company State" />
+  <input type="text" [(ngModel)]="userProfile.company.address.country" name="companyCountry" placeholder="Company Country" />
+<div class="button-group">
+  <button type="submit">Create Profile</button>
+  <button type="button" (click)="updateProfile()">Update Profile</button>  
+</div>
+
+  </form>
+</div>

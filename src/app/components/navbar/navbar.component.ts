@@ -9,5 +9,11 @@ import { RouterModule } from '@angular/router';
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
+  logout() {
+  localStorage.clear();
+  // Optional: Redirect to login or home
+  window.location.href = '/login'; // or use Angular Router if you're routing
+}
+
 
 }

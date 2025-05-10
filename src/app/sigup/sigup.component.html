@@ -1,8 +1,20 @@
 <body>
     <div class="login-container">
       <div class="login-box">
-        <h2>Login</h2>
+        <h2>Sign up</h2>
         <form >
+            <div class="form-group">
+            <label for="username">Username:</label>
+            <input
+            type="username"
+            id="username"
+            name="username"
+            placeholder="enter your username"
+            [(ngModel)]="loginobj.username"
+            required
+          />
+        </div>
+            
           <div class="form-group">
             <label for="email">Email:</label>
             <input
@@ -14,6 +26,22 @@
             required
            />
           </div>
+           <div class="form-group">
+                     <label for="role">Role:</label>
+  <select
+    id="role"
+    name="role"
+    [(ngModel)]="loginobj.role"
+    required
+    class="form-control"
+  >
+  <option value="" disabled selected>Select your role</option>
+    <option value="Investor">Investor</option>
+    <option value="Entrepreneur">Entrepreneur</option>
+    <!-- Add more roles as needed -->
+  </select>
+ 
+</div>
           <div class="form-group">
             <label for="password">Password:</label>
             <input
@@ -25,8 +53,8 @@
             required
           />
         </div>
+                 
           <button (click)="onLogin()">Login</button>
-          <a href="/signup">signup</a>
           <!-- <button type="submit" [routerLink]="['/userlist']">Login</button> -->
         </form>
       </div>

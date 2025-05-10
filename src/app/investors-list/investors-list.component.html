@@ -1,0 +1,33 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <h2 class="mt-4 mb-4">Investors List</h2>
+    @for (item of users; track $index) {
+        <a style="border: 0.5px solid gray;border-radius: 10px;" class="list-group-item list-group-item-action flex-column align-items-start active mb-3 p-3">
+            <div class="d-flex w-100 justify-content-between">
+                <div class="d-flex gap-2 align-items-center">
+                    <img height="50px" width="50px" src="{{item.image}}">
+                    <h5 class="mb-1">{{item.username}}</h5>
+                </div>
+               
+                <small>DOB: {{ item.birthdate | date:'dd-MM-yyyy' }}</small>
+            </div>
+            <div class="d-flex justify-content-between">
+                <div>
+                    <p class="mb-1">Email: {{item.email}}</p>
+                <small>{{item.company.name}}</small>
+                </div>
+                <button [routerLink]="['/investors',item._id]" class="btn btn-sm btn-primary h-100">View</button>
+            </div>
+           
+            
+        </a>
+    }
+    @if (IsLoading) {
+       <app-loader>
+        
+       </app-loader>
+
+    }
+    
+    
+</div>

@@ -1,0 +1,64 @@
+/* Container for sender/receiver input */
+div:first-child {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+input {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  flex: 1;
+}
+
+button {
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Chat message list */
+div:nth-child(2) {
+  max-height: 400px;
+  overflow-y: auto;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 20px;
+  background: #f9f9f9;
+}
+
+p {
+  margin: 8px 0;
+  padding: 8px 12px;
+  background-color: #e3f2fd;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+p strong {
+  color: #007bff;
+}
+
+/* Input and send button at the bottom */
+input[placeholder="Type a message..."] {
+  width: calc(100% - 100px);
+  margin-right: 10px;
+}
+
+input[placeholder="Type a message..."],
+button:last-child {
+  margin-top: 10px;
+}

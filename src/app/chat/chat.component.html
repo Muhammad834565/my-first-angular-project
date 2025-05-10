@@ -1,0 +1,12 @@
+<div>
+  <input placeholder="Sender ID" [(ngModel)]="sender" />
+  <input placeholder="Receiver ID" [(ngModel)]="receiver" />
+  <button (click)="loadMessages()">Load Chat</button>
+</div>
+
+<div *ngFor="let message of messages">
+  <p><strong>{{ message.sender }}:</strong> {{ message.content }}</p>
+</div>
+
+<input [(ngModel)]="newMessage" placeholder="Type a message..." />
+<button (click)="sendMessage()">Send</button>

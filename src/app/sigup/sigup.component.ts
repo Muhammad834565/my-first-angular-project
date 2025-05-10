@@ -3,18 +3,23 @@ import { Router, RouterModule } from '@angular/router';
 import { LoginService } from '../services/login.service';
 import { FormsModule } from '@angular/forms';
 import { HttpStatusCode, HttpClient } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-login',
+  selector: 'app-sigup',
   standalone: true,
-  imports: [RouterModule, FormsModule],
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  imports: [RouterModule,FormsModule,CommonModule],
+  templateUrl: './sigup.component.html',
+  styleUrl: './sigup.component.css'
 })
-export class LoginComponent implements OnInit {
+export class SigupComponent implements OnInit {
+
+
   loginobj = {
-    email: '',
-    password: ''
+  username: '',
+  password: '',
+  email: '',
+  role: ''
   };
 
   constructor(
@@ -53,24 +58,14 @@ export class LoginComponent implements OnInit {
   }
 
   onLogin(): void {
-    if (!this.loginobj.email || !this.loginobj.password) {
+    if (!this.loginobj.email || !this.loginobj.password || !this.loginobj.username || !this.loginobj.role) {
       return; // basic safety check
     }
 
-    this.loginService.onLogin(this.loginobj).subscribe({
+    this.loginService.onSignup(this.loginobj).subscribe({
       next: (res: any) => {
         console.log('res', res);
-        localStorage.setItem('token', res.token);
-        localStorage.setItem('id', res.user.id);
-        localStorage.setItem('username', res.user.username);
-        localStorage.setItem('email', res.user.email);
-        localStorage.setItem('role', res.user.role);
-
-        if (res.user.role === 'Entrepreneur') {
-          this.router.navigateByUrl('/investors');
-        } else {
-          this.router.navigateByUrl('/entrepreneurs');
-        }
+        this.router.navigateByUrl('/login');
       },
       error: (err) => {
         if (err.status === HttpStatusCode.BadRequest) {
